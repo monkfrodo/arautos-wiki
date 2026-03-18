@@ -99,13 +99,15 @@ body {
 .wiki-sidebar {
   background: var(--sidebar-bg);
   border-right: 1px solid var(--border-light);
-  padding: 16px 12px;
+  padding: 16px 12px 40px;
   font-size: 13px;
   overflow-y: auto;
   max-height: calc(100vh - 52px);
   position: sticky;
   top: 52px;
   align-self: start;
+  mask-image: linear-gradient(to bottom, black calc(100% - 36px), transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black calc(100% - 36px), transparent 100%);
 }
 
 .sidebar-section {
