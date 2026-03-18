@@ -515,6 +515,130 @@ body {
   text-decoration: none;
 }
 
+/* ===== MINI TIMELINE ===== */
+.mini-timeline {
+  margin: 20px 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
+}
+
+.mini-timeline::before {
+  content: '';
+  position: absolute;
+  left: 110px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--border);
+}
+
+.mini-timeline .tl-era {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: var(--accent);
+  margin: 28px 0 12px;
+  padding-left: 130px;
+  position: relative;
+}
+
+.mini-timeline .tl-era:first-child {
+  margin-top: 0;
+}
+
+.mini-timeline .tl-era::before {
+  content: '';
+  position: absolute;
+  left: 105px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 13px;
+  height: 13px;
+  background: var(--accent);
+  border-radius: 50%;
+  border: 2px solid var(--content-bg);
+}
+
+.mini-timeline .tl-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.mini-timeline .tl-item::before {
+  content: '';
+  position: absolute;
+  left: 107px;
+  top: 7px;
+  width: 9px;
+  height: 9px;
+  background: var(--green);
+  border-radius: 50%;
+  border: 2px solid var(--content-bg);
+  z-index: 1;
+}
+
+.mini-timeline .tl-item.tl-negative::before {
+  background: var(--accent);
+}
+
+.mini-timeline .tl-item.tl-neutral::before {
+  background: var(--gold);
+}
+
+.mini-timeline .tl-date {
+  width: 100px;
+  text-align: right;
+  font-size: 12px;
+  font-weight: bold;
+  color: var(--muted);
+  padding-right: 10px;
+  padding-top: 2px;
+  flex-shrink: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.mini-timeline .tl-text {
+  padding-left: 22px;
+  font-size: 13.5px;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.mini-timeline .tl-text b {
+  color: var(--ink);
+}
+
+.mini-timeline .tl-text a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+.mini-timeline .tl-text a:hover {
+  text-decoration: underline;
+}
+
+/* ===== CONTRADICTION BOX ===== */
+.contradiction {
+  background: #fff8e7;
+  border-left: 4px solid var(--gold);
+  padding: 14px 18px;
+  margin: 14px 0;
+  border-radius: 0 4px 4px 0;
+  font-size: 13.5px;
+}
+
+.contradiction .label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--gold);
+  font-weight: bold;
+  margin-bottom: 6px;
+  font-family: system-ui, sans-serif;
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .wiki-layout {
