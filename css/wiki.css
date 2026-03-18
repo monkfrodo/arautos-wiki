@@ -639,6 +639,30 @@ body {
   font-family: system-ui, sans-serif;
 }
 
+/* ===== LANGUAGE SWITCHER ===== */
+.lang-switch {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-right: 16px;
+}
+
+.lang-switch a {
+  font-size: 20px;
+  text-decoration: none;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+  line-height: 1;
+}
+
+.lang-switch a:hover {
+  opacity: 0.8;
+}
+
+.lang-switch a.active {
+  opacity: 1;
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .wiki-layout {
