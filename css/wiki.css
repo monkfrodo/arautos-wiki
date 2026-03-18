@@ -105,6 +105,7 @@ body {
   max-height: calc(100vh - 52px);
   position: sticky;
   top: 52px;
+  align-self: start;
 }
 
 .sidebar-section {
