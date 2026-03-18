@@ -38,7 +38,7 @@ body {
 .wiki-layout {
   display: grid;
   grid-template-columns: 220px 1fr;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto 1fr;
   min-height: 100vh;
 }
 
@@ -502,7 +502,6 @@ body {
 
 /* ===== FOOTER ===== */
 .wiki-footer {
-  grid-column: 1 / -1;
   background: var(--border-light);
   padding: 16px 24px;
   text-align: center;
