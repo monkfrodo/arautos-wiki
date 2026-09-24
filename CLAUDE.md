@@ -6,7 +6,7 @@ Site estático wiki-style respondendo às acusações do documentário "Escravos
 ## Stack
 - HTML estático + CSS + JavaScript vanilla
 - Sem framework, sem build step
-- Deploy: DigitalOcean (Nginx) em arautos.integros.org
+- Deploy: Cloudflare Pages (`arautos-wiki`) em arautos.integros.org, autodeploy via GitHub Actions
 
 ## Estrutura
 - /*.html — Artigos da wiki (20 páginas interligadas)
@@ -14,9 +14,14 @@ Site estático wiki-style respondendo às acusações do documentário "Escravos
 - /js/ — Scripts (se necessário)
 
 ## Deploy
-- Servidor: 138.197.123.132 (porta SSH 2299, user deploy)
-- Domínio: arautos.integros.org
-- Servido por Nginx como site estático
+Cloudflare Pages, projeto `arautos-wiki` (arautos.integros.org).
+
+**Autodeploy (desde 2026-09-24):** todo push em `main` roda `.github/workflows/deploy.yml` no GitHub Actions, que publica a pasta `.` via `wrangler pages deploy --branch=main`. Secrets `CLOUDFLARE_API_TOKEN` e `CLOUDFLARE_ACCOUNT_ID` ficam no repo.
+
+- Publicar = commit + push em `main`. **Não** usar `wrangler pages deploy` manual: o que não estiver no Git é sobrescrito no próximo push.
+- Republicar sem commit: `gh workflow run deploy.yml`. Acompanhar: `gh run list` / `gh run watch`.
+- Não vão para o site: `CLAUDE.md`, `AGENTS.md`, `README.md`, `.github`, `.claude*`, `functions/`, `scripts/`, `test/`, `package*.json`, `wrangler.*`. Pages Functions em `functions/` continuam sendo compiladas normalmente.
+- Guia geral: vault `30-tecnico/deploys-cloudflare.md`.
 
 ## Git
 - Push direto na main (site estático, sem build costs)
